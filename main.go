@@ -3,5 +3,5 @@ package main
 import "log"
 
 func main() {
-	log.Printf("changed\n")
+	log.Printf("new version\n")
 }
