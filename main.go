@@ -1,7 +1,11 @@
 package main
 
-import "log"
+import "net/http"
 
 func main() {
-	log.Printf("new version\n")
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("hello"))
+	})
+	http.ListenAndServe(":80", mux)
 }
